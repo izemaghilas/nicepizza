@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  app:
+    build: ./.docker/php
+    image: nicepizza
+    container_name: np_app_container
+    volumes:
+      - .:/home/nicepizza
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13-alpine
+    container_name: np_db_container
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    container_name: np_adminer_container
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
