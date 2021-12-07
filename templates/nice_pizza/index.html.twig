@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nice Pizza{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/nicepizza/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/nicepizza/header.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/nicepizza/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/nicepizza/footer.css') }}">
+    {% endblock stylesheets %}
+{% block body %}
+    <header>
+        <img src="{{ asset('img/logo.png') }}" alt="logo">
+        <div class="header-title">
+            <span>chez Nice Pizza</span>
+            <span>vous trouverez toutes les pizzas, sauf celle que vous voulez !</span>
+        </div>
+    </header>
+    <main>
+        <div class="container-joke">
+            <span>Chez Nice Pizza</span>
+            <span>vos pizzas sont prêtes dans 15 minutes seulement !</span>
+        </div>
+        <div class="container-order">
+            <span>Commandez en ligne</span>
+            <a href="{{ path('place_order') }}">
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <span>Apprendre le framework Symfony par un projet :)</span>
+        <span>code source sur github</span>
+        <a href="https://github.com/izemaghilas/nicepizza" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github"></i>
+        </a>
+    </footer>
+{% endblock %}
