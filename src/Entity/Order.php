@@ -28,6 +28,18 @@ class Order
      */
     private $total_price;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Pizza::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pizza;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="orders")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $client;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +65,30 @@ class Order
     public function setTotalPrice(int $total_price): self
     {
         $this->total_price = $total_price;
+
+        return $this;
+    }
+
+    public function getPizza(): ?Pizza
+    {
+        return $this->pizza;
+    }
+
+    public function setPizza(?Pizza $pizza): self
+    {
+        $this->pizza = $pizza;
+
+        return $this;
+    }
+
+    public function getClient(): ?Client
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Client $client): self
+    {
+        $this->client = $client;
 
         return $this;
     }
