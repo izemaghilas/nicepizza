@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+header a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-bottom: 10px;
+}
+
+header a img {
+    width: 90px;
+    height: 60px;
+}
+
+header a span {
+    color:  #000;
+    font-weight: bold;
+    font-style: italic;
+    font-size: larger;
+    align-self: center;
+}

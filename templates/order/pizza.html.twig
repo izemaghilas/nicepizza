@@ -1,0 +1,18 @@
+<div class="container-pizza">
+    <div class="pizza-img">
+        <span>{{ pizza.name }}</span>
+    </div>
+    <div class="pizza-header">
+        <span class="pizza-price">{{ pizza.price }} €</span>
+    </div>
+    <div class="pizza-ingredients">
+        {% for i in 0..pizza.ingredients|length-1 %}
+        <span>{{ pizza.ingredients[i].name }},</span>
+        {% endfor %}
+        <span>{{ pizza.ingredients[pizza.ingredients|length-1].name }}.</span>
+    </div>
+    <div class="pizza-number">
+        <input type="number" id="" min="1" value="1">
+        <button>AJOUTER</button>
+    </div>
+</div>
