@@ -3,18 +3,23 @@
     <p>Web application made with Symfony 6</p>
 </div>
 
-### Description
+## Description
 Build a web application to manage pizzeria.  
 The application consists of:
 * Online pizzas order
 * Dashboard to render all the placed orders
 * Owner Dashboard to add new pizzas, new ingredients ...etc.
 
-### Progress
+## Progress
 Implemented the online pizzas order and a homepage.
 
-### Running
-Install Docker and Docker Compose.  
+## Install
+install docker and docker compose  
+https://docs.docker.com/engine/install/  
+https://docs.docker.com/compose/install/  
+In MacOs or Windows, Docker Desktop includes docker compose.  
+
+## Running
     $ docker compose --env-file ".env.local" up -d
     $ docker exec -ti np_app_container /bin/sh
     $ php bin/console doctrine:migrations:migrate
