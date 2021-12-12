@@ -13,21 +13,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class PlaceOrderController extends AbstractController
+class OrderController extends AbstractController
 {
 
-    #[Route('/place-order', name: 'place_order_index', methods: ['GET'])]
+    #[Route('/order', name: 'order_list_pizzas', methods: ['GET'])]
     public function index(ManagerRegistry $doctrine): Response
     {
 
         $pizzas = $doctrine->getRepository(Pizza::class)->findAll();
 
-        return $this->render('place_order/index.html.twig', [
+        return $this->render('order/index.html.twig', [
             'pizzas' => $pizzas
         ]);
     }
 
-    #[Route('/place-order', name: 'place_order', methods: ['POST'])]
+    #[Route('/order', name: 'place_order', methods: ['POST'])]
     public function placeOrder(Request $request, ManagerRegistry $doctrine): Response 
     {
         $data = $request->toArray();
@@ -52,6 +52,6 @@ class PlaceOrderController extends AbstractController
 
         $entityManager->flush();
         
-        return new Response('ordered hhh');
+        return new Response();
     }
 }
