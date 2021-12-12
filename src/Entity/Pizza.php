@@ -40,9 +40,15 @@ class Pizza
      */
     private $ingredients;
 
+    /**
+     * @ORM\OneToMany(targetEntity=OrderDetails::class, mappedBy="pizza")
+     */
+    private $orderDetails;
+
     public function __construct()
     {
         $this->ingredients = new ArrayCollection();
+        $this->orderDetails = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,6 +112,36 @@ class Pizza
     public function removeIngredient(Ingredient $ingredient): self
     {
         $this->ingredients->removeElement($ingredient);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OrderDetails[]
+     */
+    public function getOrderDetails(): Collection
+    {
+        return $this->orderDetails;
+    }
+
+    public function addOrderDetail(OrderDetails $orderDetail): self
+    {
+        if (!$this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails[] = $orderDetail;
+            $orderDetail->setPizza($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderDetail(OrderDetails $orderDetail): self
+    {
+        if ($this->orderDetails->removeElement($orderDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($orderDetail->getPizza() === $this) {
+                $orderDetail->setPizza(null);
+            }
+        }
 
         return $this;
     }

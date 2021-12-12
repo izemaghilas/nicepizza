@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Client;
 use App\Entity\Ingredient;
 use App\Entity\Pizza;
 use App\Entity\Sauce;
@@ -12,6 +13,16 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+
+        // default client
+        $client = new Client();
+        $client->setPhoneNumber('0123568920');
+        $manager->persist($client);
+        $client->setFirstName('aghilas');
+        $client->setLastName('izem');
+        $client->setEmail('izemaghilas@nicepizza.fr');
+
+
         // sauces
         $sauceTomate = new Sauce();
         $sauceTomate->setName('Sauce tomate');

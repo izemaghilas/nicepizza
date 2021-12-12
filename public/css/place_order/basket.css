@@ -1,0 +1,87 @@
+.container-basket h2 {
+    align-self: center;
+}
+
+.container-ordered-pizzas {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: auto;
+    scroll-padding-inline: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.ordered-pizza {
+    display: flex;
+    flex-direction: column;
+}
+.container-ordred-pizza-counter {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.container-ordred-pizza-counter span {
+    font-size: medium;
+    font-weight: 800;
+    color: #000;
+}
+
+.container-ordred-pizza-counter .ordered-pizza-price{
+    font-size: medium;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.container-ordred-pizza-counter .pizza-name {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.ordered-pizza button {
+    align-self: flex-start;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    font-size: small;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    background-color: #efd159;
+    font-weight: 600;
+    color: #000;
+}
+
+.container-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px;
+    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.container-total {
+    font-size: large;
+    font-weight: 800;
+    color: #000;
+}
+
+#place-order-btn {
+    height: 40px;
+    margin: 25px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #efd159;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    opacity: 0.5; /*the button disabled by default*/
+}

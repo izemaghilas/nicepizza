@@ -1,0 +1,39 @@
+<div class="container-pizza">
+    <div class="pizza-img">
+        <span>{{ pizza.name }}</span>
+    </div>
+    <div class="pizza-header">
+        {% set priceStr = pizza.price ~ '' %}
+        {% set parts = priceStr|split('') %}
+        
+        {% set integerPart = '' %}
+        {% for i in 0..parts|length-3 %}
+            {% set integerPart = integerPart ~ parts[i] %}
+        {% endfor %}
+        
+        {% set decimalPart = '' %}
+        {% for i in parts|length-2..parts|length-1 %}
+            {% set decimalPart = decimalPart ~ parts[i] %}
+        {% endfor %}
+        
+        <span class="pizza-price">{{ integerPart ~ '.' ~ decimalPart }} €</span>
+    </div>
+    <div class="pizza-ingredients">
+        {% for ingredient in pizza.ingredients%}
+            {% if loop.last %}
+                <span>{{ ingredient.name }}.</span>
+            {% else %}
+                <span>{{ ingredient.name}}, </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="pizza-number">
+        <input type="number" id={{ "number-of-pizza" ~ pizza.id }} min="1" value="1">
+        {% set pizzaToOrder={
+            id: pizza.id,
+            name: pizza.name,
+            price: pizza.price
+        } %}
+        <button id="btn-add-pizza" data-pizza="{{ pizzaToOrder|json_encode }}">AJOUTER</button>
+    </div>
+</div>
