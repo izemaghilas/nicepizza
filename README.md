@@ -6,7 +6,8 @@
 ## Description
 Build a web application to manage pizzeria.  
 The application consists of:
-* Online pizzas order
+* Landing page
+* Online pizzas order page
 * Dashboard to render all the placed orders
 * Owner Dashboard to add new pizzas, new ingredients ...etc.
 
