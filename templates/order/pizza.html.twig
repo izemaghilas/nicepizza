@@ -18,6 +18,9 @@
         
         <span class="pizza-price">{{ integerPart ~ '.' ~ decimalPart }} €</span>
     </div>
+    <div class="pizza-sauce">
+        <span>{{ "Base "~pizza.sauce.name|lower }}</span>
+    </div>
     <div class="pizza-ingredients">
         {% for ingredient in pizza.ingredients%}
             {% if loop.last %}
