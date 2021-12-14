@@ -6,3 +6,11 @@ body {
     overflow: hidden;
     height: 100vh;
 }
+
+.notification-container {
+    z-index: 5;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    pointer-events: none;
+}

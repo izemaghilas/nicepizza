@@ -30,4 +30,12 @@ const addPizza = (pizza, numberOfPizzas)=>{
     renderOrder();
     placeOrderBtn.disabled = false;
     placeOrderBtn.style.opacity = 1;
+
+    renderNotification("Ajouté au panier");
+    setTimeout(()=>{
+        const notification = document.getElementById("notification");
+        if(notification.firstChild){
+            notification.removeChild(notification.firstChild);
+        }
+    }, 1000);
 }

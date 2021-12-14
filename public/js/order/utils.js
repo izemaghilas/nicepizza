@@ -19,3 +19,48 @@ const priceToString = (price)=>{
 
     return integerPart+"."+decimalPart;
 }
+
+
+/**
+ * create a notification container
+ * @param {*string the message to display} message 
+ * @returns {*HTMLDocument the notification container}
+ */
+ const notification = (message)=>{
+    const container = document.createElement("div");
+    container.style = 
+        `
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #fff;
+            opacity: 0.8;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,.12);
+            height: 50px;
+        `;
+
+    const checkIcon = document.createElement("i");
+    checkIcon.setAttribute("class", "bi bi-check-circle-fill");
+    checkIcon.style = 
+        `
+            font-size: xx-large;
+            color: #efd159;
+        `;
+    
+    const messageSpan = document.createElement("span");
+    messageSpan.style = 
+        `
+            margin-left: 20px;
+            font-size: x-large;
+            font-weight: 800;
+            color: #000;
+        `;
+    messageSpan.append(message);
+
+    container.appendChild(checkIcon);
+    container.appendChild(messageSpan);
+
+    return container;
+}

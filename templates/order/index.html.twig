@@ -12,12 +12,7 @@
 {% endblock stylesheets %}
 
 {% block body %}
-    <header>
-        <a href="{{ path('nice_pizza_home') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="logo">
-            <span>Nice Pizza</span>
-        </a>
-    </header>
+   {{ include('header.html.twig') }}
     <main>
         <div class="container-pizzas">
             {% for pizza in pizzas %}
@@ -36,6 +31,7 @@
     </main>
     <footer></footer>
     <script src="{{ asset('js/order/utils.js') }}"></script>
+    <script src="{{ asset('js/order/renderNotification.js') }}"></script>
     <script src="{{ asset('js/order/renderOrder.js') }}"></script>
     <script src="{{ asset('js/order/removePizza.js') }}"></script>
     <script src="{{ asset('js/order/addPizza.js') }}"></script>
