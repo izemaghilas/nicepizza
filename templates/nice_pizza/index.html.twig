@@ -2,23 +2,18 @@
 
 {% block title %}Nice Pizza{% endblock %}
     {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nicepizza/index.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/nicepizza/header.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nicepizza/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nicepizza/footer.css') }}">
     {% endblock stylesheets %}
 {% block body %}
-    <header>
-        <img src="{{ asset('img/logo.png') }}" alt="logo">
-        <div class="header-title">
-            <span>chez Nice Pizza</span>
-            <span>vous trouverez toutes les pizzas, sauf celle que vous voulez !</span>
-        </div>
-    </header>
+   {{ include('header.html.twig') }}
     <main>
         <div class="container-joke">
             <span>Chez Nice Pizza</span>
-            <span>vos pizzas sont prêtes dans 15 minutes seulement !</span>
+            <span>Vous trouverez toutes les pizzas, sauf celle que vous voulez !</span>
+            <span>N'oubliez pas, vos pizzas sont prêtes dans 15 minutes seulement !</span>
         </div>
         <div class="container-order">
             <span>Commandez en ligne</span>

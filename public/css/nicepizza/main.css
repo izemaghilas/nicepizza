@@ -1,17 +1,18 @@
 main {
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
+    justify-content: flex-start;
     flex: 2;
+    background-color: #f5f5f5;
 }
 
 main .container-joke {
     margin-left: 5%;
+    margin-top: 5%;
 }
 main .container-joke span {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     color:  #000;
     font-weight: bold;
     font-style: italic;
@@ -25,7 +26,8 @@ main .container-order {
     align-items: center;
     width: 300px;
     height: 200px;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 main .container-order span {
