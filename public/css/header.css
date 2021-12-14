@@ -1,11 +1,11 @@
 header {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     border-bottom: 1px solid rgba(0,0,0,.12);
 }
 
-header a {
+.nice-pizza-logo {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -15,15 +15,33 @@ header a {
     margin-bottom: 10px;
 }
 
-header a img {
+.nice-pizza-logo img {
     width: 90px;
     height: 60px;
 }
 
-header a span {
+.nice-pizza-logo span {
     color:  #000;
     font-weight: bold;
     font-style: italic;
     font-size: larger;
     align-self: center;
+}
+
+.orders-dashboard {
+    align-self: center;
+    margin-right: 10%;
+}
+.orders-dashboard button {
+    width: 200px;
+    height: 40px;
+    margin: 25px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #efd159;
+    border: none;
+    cursor: pointer;
+    color: #000;
 }
