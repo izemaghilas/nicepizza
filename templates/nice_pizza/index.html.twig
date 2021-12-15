@@ -2,13 +2,13 @@
 
 {% block title %}Nice Pizza{% endblock %}
     {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/nicepizza/index.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nicepizza/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nicepizza/footer.css') }}">
     {% endblock stylesheets %}
 {% block body %}
-   {{ include('header.html.twig') }}
+   {{ include('header.html.twig', {pathName: 'orders_dashboard', btnName: 'Les Commandes'}, with_context=false) }}
     <main>
         <div class="container-joke">
             <span>Chez Nice Pizza</span>

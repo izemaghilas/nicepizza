@@ -3,7 +3,7 @@
 {% block title %}Commander en ligne{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/order/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/order/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/order/pizza.css') }}">
@@ -12,7 +12,7 @@
 {% endblock stylesheets %}
 
 {% block body %}
-   {{ include('header.html.twig') }}
+    {{ include('header.html.twig', {pathName: 'orders_dashboard', btnName: 'Les Commandes'}, with_context=false) }}
     <main>
         <div class="container-pizzas">
             {% for pizza in pizzas %}
