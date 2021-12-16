@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/nicepizza/footer.css') }}">
     {% endblock stylesheets %}
 {% block body %}
-   {{ include('header.html.twig', {pathName: 'orders_dashboard', btnName: 'Les Commandes'}, with_context=false) }}
+   {{ include('_header.html.twig', with_context=false) }}
     <main>
         <div class="container-joke">
             <span>Chez Nice Pizza</span>
