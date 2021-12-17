@@ -1,18 +1,12 @@
 <div align="center">
     <h1>Nice Pizza</h1>
-    <p>Web application made with Symfony 6</p>
+    <p>Website made with Symfony 6</p>
 </div>
 
 ## Description
-Build a web application to manage pizzeria.  
-The application consists of:
+**Nice Pizza** a website to order pizzas, it consists of :
 * Landing page
-* Online pizzas order page
-* Dashboard to render all the placed orders
-* Owner Dashboard to add new pizzas, new ingredients ...etc.
-
-## Progress
-Implemented the online pizzas order and a homepage.
+* Place order page
 
 ## Install
 install docker and docker compose  
