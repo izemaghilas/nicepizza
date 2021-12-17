@@ -1,2 +1,2 @@
-release: ./release-tasks.sh
+release: echo yes |php bin/console doctrine:migrations:migrate
 web: vendor/bin/heroku-php-apache2 public/
