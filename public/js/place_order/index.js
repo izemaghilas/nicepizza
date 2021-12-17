@@ -37,7 +37,7 @@ placeOrderBtn.addEventListener('click', (ev)=>{
         }
     }
 
-    httpRequest.open("POST", URL+"/order");
+    httpRequest.open("POST", URL+"/place-order");
     httpRequest.setRequestHeader('Content-Type', "application/json");
     order.orderedAt = new Date();
     httpRequest.send(JSON.stringify(order));

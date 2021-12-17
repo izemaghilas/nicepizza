@@ -4,11 +4,11 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/order/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/order/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/order/pizza.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/order/basket.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/order/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/place_order/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/place_order/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/place_order/pizza.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/place_order/basket.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/place_order/footer.css') }}">
 {% endblock stylesheets %}
 
 {% block body %}
@@ -30,10 +30,10 @@
         </div>
     </main>
     <footer></footer>
-    <script src="{{ asset('js/order/utils.js') }}"></script>
-    <script src="{{ asset('js/order/renderNotification.js') }}"></script>
-    <script src="{{ asset('js/order/renderOrder.js') }}"></script>
-    <script src="{{ asset('js/order/removePizza.js') }}"></script>
-    <script src="{{ asset('js/order/addPizza.js') }}"></script>
-    <script src="{{ asset('js/order/index.js') }}"></script>
+    <script src="{{ asset('js/place_order/utils.js') }}"></script>
+    <script src="{{ asset('js/place_order/renderNotification.js') }}"></script>
+    <script src="{{ asset('js/place_order/renderOrder.js') }}"></script>
+    <script src="{{ asset('js/place_order/removePizza.js') }}"></script>
+    <script src="{{ asset('js/place_order/addPizza.js') }}"></script>
+    <script src="{{ asset('js/place_order/index.js') }}"></script>
 {% endblock %}
