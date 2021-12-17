@@ -1,6 +1,9 @@
 <div align="center">
     <h1>Nice Pizza</h1>
-    <p>Website made with Symfony 6</p>
+    <p>
+        Website made with Symfony 6<br>
+        https://nicepizza.herokuapp.com/
+    </p>
 </div>
 
 ## Description
