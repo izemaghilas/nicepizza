@@ -21,7 +21,7 @@ class TrackOrderController extends AbstractController
             'json' => ['id' => $orderId] 
         ]);
 
-        return $this->render('tracker/index.html.twig', [
+        return $this->render('track_order/index.html.twig', [
             'id' => $orderId,
         ]);
     }

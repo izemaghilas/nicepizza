@@ -9,8 +9,6 @@ const order = {
     totalPrice: 0.00
 };
 
-const websiteURL = "http://127.0.0.1:8000";
-
 const addPizzaBtns = document.querySelectorAll("#btn-add-pizza");
 const placeOrderBtn = document.getElementById("place-order-btn");
 const orderedPizzasContainer = document.querySelector(".container-ordered-pizzas");

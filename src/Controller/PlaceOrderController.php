@@ -22,9 +22,10 @@ class PlaceOrderController extends AbstractController
     {
 
         $pizzas = $doctrine->getRepository(Pizza::class)->findAll();
-
+        $websiteUrl = $this->getParameter('app.website_url');
         return $this->render('place_order/index.html.twig', [
-            'pizzas' => $pizzas
+            'pizzas' => $pizzas,
+            'url' => $websiteUrl
         ]);
     }
 
