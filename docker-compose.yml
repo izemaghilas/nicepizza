@@ -5,6 +5,8 @@ services:
     build: ./.docker/php
     image: nicepizza
     container_name: np_app_container
+    networks:
+      - mercure_network
     volumes:
       - .:/home/nicepizza
     ports:
@@ -15,6 +17,8 @@ services:
   db:
     image: postgres:13-alpine
     container_name: np_db_container
+    networks:
+      - mercure_network
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -25,6 +29,8 @@ services:
   adminer:
     image: adminer
     container_name: np_adminer_container
+    networks:
+      - mercure_network
     ports:
       - 8080:8080
     depends_on:
@@ -33,6 +39,8 @@ services:
   mercure:
     image: dunglas/mercure
     container_name: np_mercure_container
+    networks:
+      - mercure_network
     restart: unless-stopped
     ports:
       - 3000:80
@@ -46,6 +54,9 @@ services:
     volumes:
       - mercure_data:/data
       - mercure_config:/config
+
+networks:
+  mercure_network: 
 
 volumes:
   mercure_data:
