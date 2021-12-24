@@ -12,8 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mercure\HubInterface;
-use Symfony\Component\Mercure\Update;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PlaceOrderController extends AbstractController
@@ -31,7 +29,7 @@ class PlaceOrderController extends AbstractController
     }
 
     #[Route('/place-order', name: 'place_order', methods: ['POST'])]
-    public function placeOrder(Request $request, ManagerRegistry $doctrine, HubInterface $hub): JsonResponse 
+    public function placeOrder(Request $request, ManagerRegistry $doctrine): JsonResponse 
     {
         $data = $request->toArray();
         $order = new Order();
@@ -54,11 +52,8 @@ class PlaceOrderController extends AbstractController
         }
 
         $entityManager->flush();
-        
-        $update = new Update("/order/{$order->getId()}", json_encode(['status'=>'created']), true);
-        $hub->publish($update);
 
-        $orderTrackURL = $this->generateUrl('order_track', ['id'=>$order->getId()]);
+        $orderTrackURL = $this->generateUrl('track_order', ['id'=>$order->getId()]);
 
         return new JsonResponse([
             'url'=>$orderTrackURL
