@@ -9,6 +9,7 @@ use App\Entity\Pizza;
 use DateTimeImmutable;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,14 +22,15 @@ class PlaceOrderController extends AbstractController
     {
 
         $pizzas = $doctrine->getRepository(Pizza::class)->findAll();
-
+        $websiteUrl = $this->getParameter('app.website_url');
         return $this->render('place_order/index.html.twig', [
-            'pizzas' => $pizzas
+            'pizzas' => $pizzas,
+            'url' => $websiteUrl
         ]);
     }
 
     #[Route('/place-order', name: 'place_order', methods: ['POST'])]
-    public function placeOrder(Request $request, ManagerRegistry $doctrine): Response 
+    public function placeOrder(Request $request, ManagerRegistry $doctrine): JsonResponse 
     {
         $data = $request->toArray();
         $order = new Order();
@@ -51,7 +53,11 @@ class PlaceOrderController extends AbstractController
         }
 
         $entityManager->flush();
-        
-        return new Response();
+
+        $orderTrackURL = $this->generateUrl('track_order', ['id'=>$order->getId()]);
+
+        return new JsonResponse([
+            'url'=>$orderTrackURL
+        ], Response::HTTP_CREATED);
     }
 }

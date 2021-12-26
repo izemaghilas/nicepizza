@@ -5,6 +5,8 @@ services:
     build: ./.docker/php
     image: nicepizza
     container_name: np_app_container
+    networks:
+      - mercure_network
     volumes:
       - .:/home/nicepizza
     ports:
@@ -15,6 +17,8 @@ services:
   db:
     image: postgres:13-alpine
     container_name: np_db_container
+    networks:
+      - mercure_network
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -25,7 +29,12 @@ services:
   adminer:
     image: adminer
     container_name: np_adminer_container
+    networks:
+      - mercure_network
     ports:
       - 8080:8080
     depends_on:
       - db
+
+networks:
+  mercure_network: 

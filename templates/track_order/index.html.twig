@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma Commande{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/track_order/main.css') }}">
+{% endblock stylesheets %}
+
+{% block body %}
+   {{ include('_header.html.twig') }}
+    <main>
+        <div class="order-status-container">
+            <span id="order-status"></span>
+            <div class="spinner"></div>
+        </div>
+    </main>
+    <script src="{{ asset('js/track_order/index.js') }}"></script>
+{% endblock %}
