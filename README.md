@@ -8,7 +8,7 @@
 
 ## Description
 **nicepizza** consists of :
-* Landing page
+* Home page
 * Place order page
 * Simulator of placed order tracker
 
